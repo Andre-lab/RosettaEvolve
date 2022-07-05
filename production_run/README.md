@@ -2,7 +2,7 @@ This directory contains an example xml script (production_run.xml) for evolving 
 
 1) evolves the sequence for a certain number of trials
 2) It dumps a PDB file
-3) The effect of all point mutations (ddG) at all sites in the protein is calculated and stored in a text file.
+3) The effect of all point mutations at all sites in the protein is calculated and stored in a text file. ddG can be calculated from this with the offset.
 
 1)-3) is carried out a certain number of times to allow for many multiple substutions occuring at the same site. In the manuscript on average 10 mutations per site is simulated.
 
@@ -12,5 +12,5 @@ are stored in progress files that store the substitution pattern and energy valu
 Comments on the xml script:
 
 - steepness is the factor that convert the Rosetta energy (for the beta_nov16_cart energy function) onto the approximate kcal/mol scale (beta * T) in the Boltzmann function).  
-- The NucleotideMutation move measures the ddG values at each position of the protein for all point mutations
+- The NucleotideMutation move measures the energy values at each position of the protein for all point mutations (from which the ddG can be calculated).
 - The EvolutionaryDynamics mover runs the evolutionary dynamics simulations and evolves the sequence
