@@ -10,3 +10,5 @@ RosettaEvolve is a set of methods used to simulated the evolution of proteins us
 4) Simulation of a phylogenetic tree using RosettaEvolve. A tree crawling alogorithm recursively visits all the branches of a pre-defined phylogenetic tree. Example data and scripts in the directory tree_crawling.
 
 Amino-acid site-rates are evalulated for some trajectories using a script based on a markov state model presented in "Norn C, Andre I, Theobald DL. A thermodynamic model of protein structure evolution explains empirical amino acid substitution matrices. Protein Sci. 2021;30(10):2057-68. Epub 2021/07/05. doi: 10.1002/pro.4155." The script is found in the directory site_rates.
+
+More information can be found in README files in each of the subdirectories. 
