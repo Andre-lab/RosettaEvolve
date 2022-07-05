@@ -2,7 +2,7 @@ This directory contains an example xml script (equilibrate_sequence.xml) for equ
 
 1) evolves the sequence for a certain number of trials
 2) It dumps a PDB file
-3) The effect of all point mutations (ddG) at all sites in the protein is calculated and stored in a text file.
+3) The effect of all point mutations at all sites in the protein is calculated and stored in a text file. ddG can be calculated from this with the offset.
 
 1)-3) is carried out a certain number of times to allow for many multiple substutions occuring at the same site. In the manuscript on average 10 mutations per site is simulated.
 
