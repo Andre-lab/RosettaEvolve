@@ -15,3 +15,5 @@ There are a couple of hard coded parameters within the script:
 - Protein length and values used to give an estimation of the computation time used for the tree crawling.
 
 Example of resulting trajectory data found in the directory trajectory.
+
+The script calls and xml script that runs the RosettaEvolve simulation for each branch, simulate_branch_expected.xml, found here.

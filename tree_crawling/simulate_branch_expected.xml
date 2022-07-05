@@ -1,0 +1,26 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<ScoreFunction name="beta_nov16_cart" weights="beta_nov16_cart"/>
+	</SCOREFXNS>
+
+	<TASKOPERATIONS>
+		<InitializeFromCommandline name="init"/>
+		<RestrictToRepacking name="rtr"/>
+	</TASKOPERATIONS>
+
+	<FILTERS>
+		<ScoreType name="total_score" scorefxn="beta_nov16_cart" score_type="total_score" confidence="0" threshold="100000"/>
+		<Sigmoid name="stability" filter="total_score" steepness="0.86" offset="%%offset%%" negate="0"/>
+		<Operator name="objective_function" filters="stability" operation="PRODUCT" negate="1" logarithm="1" threshold="100000"/>
+	</FILTERS>
+
+	<MOVERS>
+		NucleotideMutation name="mut" allow_silent="1" flexbb="1" bbnbrs="999" scorefxn="beta_nov16_cart"/> I need cont_if_silent=0 here, as this will be used for rate matrix calculations.
+    		<NucleotideMutation name="mut" allow_silent="1" bbnbrs="0" fast_relax_cycles="1" flexbb="0" dualspace="1" kappa="2.7" rho="0.1" scorefxn="beta_nov16_cart"/>
+    		<EvolutionaryDynamics name="evolve" ignore_fitness_equilibrium_check="1" reset_baselines="0" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="%%progress_id%%.txt" filter_name="stability" branch_length="%%branch_length%%" mutation_rate="%%mutationRate%%" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/> 
+    </MOVERS>
+
+	<PROTOCOLS>
+    	<Add mover="evolve"/>
+	</PROTOCOLS>
+</ROSETTASCRIPTS>
