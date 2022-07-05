@@ -1,0 +1,84 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<ScoreFunction name="beta_nov16_cart" weights="beta_nov16_cart"/>
+	</SCOREFXNS>
+
+  <FILTERS>
+		<ScoreType name="total_score" scorefxn="beta_nov16_cart" score_type="total_score" confidence="0" threshold="100000"/>
+		<Sigmoid name="stability" filter="total_score" steepness="0.86" offset="%%offset%%" negate="0"/>
+	</FILTERS>
+
+  <MOVERS>
+    <NucleotideMutation name="mut" allow_silent="0" bbnbrs="0" fast_relax_cycles="1" flexbb="0" dualspace="1" kappa="2.7" rho="0.1" scorefxn="beta_nov16_cart"/>
+     <NucleotideMutation name="measure_energies0" bbnbrs="0" score_file="ranks/bl_0_%%e_delta%%_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+   <NucleotideMutation name="measure_energies1" bbnbrs="0" score_file="ranks/bl_1_%%e_delta%%_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+    <NucleotideMutation name="measure_energies2" bbnbrs="0" score_file="ranks/bl_2_%%e_delta%%_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+    <NucleotideMutation name="measure_energies3" bbnbrs="0" score_file="ranks/bl_3_%%e_delta%%_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+    <NucleotideMutation name="measure_energies4" bbnbrs="0" score_file="ranks/bl_4_%%e_delta%%_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+    <NucleotideMutation name="measure_energies5" bbnbrs="0" score_file="ranks/bl_5_%%e_delta%%_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+    <NucleotideMutation name="measure_energies6" bbnbrs="0" score_file="ranks/bl_6_%%e_delta%%_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+    <NucleotideMutation name="measure_energies7" bbnbrs="0" score_file="ranks/bl_7_%%e_delta%%_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+    <NucleotideMutation name="measure_energies8" bbnbrs="0" score_file="ranks/bl_8_%%e_delta%%_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+    <NucleotideMutation name="measure_energies9" bbnbrs="0" score_file="ranks/bl_9_%%e_delta%%_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+    <NucleotideMutation name="measure_energies10" bbnbrs="0" score_file="ranks/bl_10_%%e_delta%%_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+    NucleotideMutation name="measure_energies_0" bbnbrs="0" score_file="trajs/energies_trial_0_%%id%%.txt" allow_silent="1" fast_relax_cycles="1" measure_e_dist_at_site="9999" flexbb="0" dualspace="1" scorefxn="beta_nov16_cart"/>
+    GenericMonteCarlo name="pre_minimization" reset_baselines="0" mover_name="mut" keep_filters="1" recover_low="1" preapply="0" drift="1" progress_file="trajs/preminimzation.%%id%%.txt" filter_name="total_score" trials="12000"/>
+	<DumpPdb name="dump_1"  fname="dumps/%%id%%_%%e_delta%%_bl_1.pdb" scorefxn="beta_nov16_cart"/>
+	<DumpPdb name="dump_2"  fname="dumps/%%id%%_%%e_delta%%_bl_2.pdb" scorefxn="beta_nov16_cart"/>
+	<DumpPdb name="dump_3"  fname="dumps/%%id%%_%%e_delta%%_bl_3.pdb" scorefxn="beta_nov16_cart"/>
+	<DumpPdb name="dump_4"  fname="dumps/%%id%%_%%e_delta%%_bl_4.pdb" scorefxn="beta_nov16_cart"/>
+	<DumpPdb name="dump_5"  fname="dumps/%%id%%_%%e_delta%%_bl_5.pdb" scorefxn="beta_nov16_cart"/>
+	<DumpPdb name="dump_6"  fname="dumps/%%id%%_%%e_delta%%_bl_6.pdb" scorefxn="beta_nov16_cart"/>
+	<DumpPdb name="dump_7"  fname="dumps/%%id%%_%%e_delta%%_bl_7.pdb" scorefxn="beta_nov16_cart"/>
+	<DumpPdb name="dump_8"  fname="dumps/%%id%%_%%e_delta%%_bl_8.pdb" scorefxn="beta_nov16_cart"/>
+	<DumpPdb name="dump_9"  fname="dumps/%%id%%_%%e_delta%%_bl_9.pdb" scorefxn="beta_nov16_cart"/>
+	<DumpPdb name="dump_10" fname="dumps/%%id%%_%%e_delta%%_bl_10.pdb" scorefxn="beta_nov16_cart"/>
+	
+    <EvolutionaryDynamics name="evolve_0"  ignore_fitness_equilibrium_check="1" reset_baselines="0" max_accepted_trials="%%n_trials%%" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="trajs/progress_%%id%%_%%e_delta%%_bl_0.txt" filter_name="stability" trials="1000000" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/>
+    <EvolutionaryDynamics name="evolve_1"  ignore_fitness_equilibrium_check="1" reset_baselines="0" max_accepted_trials="%%n_trials%%" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="trajs/progress_%%id%%_%%e_delta%%_bl_1.txt" filter_name="stability" trials="1000000" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/>
+    <EvolutionaryDynamics name="evolve_2"  ignore_fitness_equilibrium_check="1" reset_baselines="0" max_accepted_trials="%%n_trials%%" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="trajs/progress_%%id%%_%%e_delta%%_bl_2.txt" filter_name="stability" trials="1000000" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/>
+    <EvolutionaryDynamics name="evolve_3"  ignore_fitness_equilibrium_check="1" reset_baselines="0" max_accepted_trials="%%n_trials%%" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="trajs/progress_%%id%%_%%e_delta%%_bl_3.txt" filter_name="stability" trials="1000000" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/>
+    <EvolutionaryDynamics name="evolve_4"  ignore_fitness_equilibrium_check="1" reset_baselines="0" max_accepted_trials="%%n_trials%%" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="trajs/progress_%%id%%_%%e_delta%%_bl_4.txt" filter_name="stability" trials="1000000" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/>
+    <EvolutionaryDynamics name="evolve_5"  ignore_fitness_equilibrium_check="1" reset_baselines="0" max_accepted_trials="%%n_trials%%" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="trajs/progress_%%id%%_%%e_delta%%_bl_5.txt" filter_name="stability" trials="1000000" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/>
+    <EvolutionaryDynamics name="evolve_6"  ignore_fitness_equilibrium_check="1" reset_baselines="0" max_accepted_trials="%%n_trials%%" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="trajs/progress_%%id%%_%%e_delta%%_bl_6.txt" filter_name="stability" trials="1000000" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/>
+    <EvolutionaryDynamics name="evolve_7"  ignore_fitness_equilibrium_check="1" reset_baselines="0" max_accepted_trials="%%n_trials%%" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="trajs/progress_%%id%%_%%e_delta%%_bl_7.txt" filter_name="stability" trials="1000000" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/>
+    <EvolutionaryDynamics name="evolve_8"  ignore_fitness_equilibrium_check="1" reset_baselines="0" max_accepted_trials="%%n_trials%%" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="trajs/progress_%%id%%_%%e_delta%%_bl_8.txt" filter_name="stability" trials="1000000" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/>
+    <EvolutionaryDynamics name="evolve_9"  ignore_fitness_equilibrium_check="1" reset_baselines="0" max_accepted_trials="%%n_trials%%" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="trajs/progress_%%id%%_%%e_delta%%_bl_9.txt" filter_name="stability" trials="1000000" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/>
+    <EvolutionaryDynamics name="evolve_10" ignore_fitness_equilibrium_check="1" reset_baselines="0" max_accepted_trials="%%n_trials%%" mover_name="mut" recover_low="0" preapply="0" drift="1" progress_file="trajs/progress_%%id%%_%%e_delta%%_bl_10.txt" filter_name="stability" trials="1000000" scorefxn_name="beta_nov16_cart" steepness="0.86" population_size="15848" offset="%%offset%%"/>
+
+  </MOVERS>
+
+  <PROTOCOLS>	
+		<Add mover="measure_energies0"/>
+		<Add mover="evolve_1"/>
+		<Add mover="measure_energies1"/>
+		<Add mover="dump_1"/>
+		<Add mover="evolve_2"/>
+		<Add mover="measure_energies2"/>
+		<Add mover="dump_2"/>
+		<Add mover="evolve_3"/>
+		<Add mover="measure_energies3"/>
+		<Add mover="dump_3"/>
+		<Add mover="evolve_4"/>
+		<Add mover="measure_energies4"/>
+		<Add mover="dump_4"/>
+		<Add mover="evolve_5"/>
+		<Add mover="measure_energies5"/>
+		<Add mover="dump_5"/>
+		<Add mover="evolve_6"/>
+		<Add mover="measure_energies6"/>
+		<Add mover="dump_6"/>
+		<Add mover="evolve_7"/>
+		<Add mover="measure_energies7"/>
+		<Add mover="dump_7"/>
+		<Add mover="evolve_8"/>
+		<Add mover="measure_energies8"/>
+		<Add mover="dump_8"/>
+		<Add mover="evolve_9"/>
+		<Add mover="measure_energies9"/>
+		<Add mover="dump_9"/>
+		<Add mover="evolve_10"/>
+		<Add mover="measure_energies10"/>
+		<Add mover="dump_10"/>
+  </PROTOCOLS>
+</ROSETTASCRIPTS>

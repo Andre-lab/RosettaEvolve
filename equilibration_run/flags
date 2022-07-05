@@ -1,0 +1,7 @@
+-database database 
+-beta_nov16_cart
+-mute core.pack.interaction_graph.interaction_graph_factory protocols.relax.FastRelax core.pack.pack_rotamers core.pack.task core.scoring.CartesianBondedEnergy core.pose.util
+-overwrite
+-use_input_sc
+-nstruct 1
+-pdb_comments true
