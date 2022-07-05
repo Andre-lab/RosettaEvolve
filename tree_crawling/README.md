@@ -4,7 +4,7 @@ The tree crawling algorithm recursively visits all nodes of a tree and has two p
 
 python rosetta_evolution_wrapper_mpi.py --offset  -422.566  --mutationRate  4.07757e-06
 
--offset is the energy offset the evolutionary trajectory should be run at.
+- offset is the energy offset the evolutionary trajectory should be run at.
 - mutationRate is the number of accepted mutations (non-synonymous) per trial. This is combined with the branch lenght stored in the phylogenetic tree to determine how many trials should
 be attempted for each branch of the tree. Due to stochasticity, this will not give exactly the same branch length as the original tree. The mutationRate parameter is estimated from
 the production run by evaluating the number of accepted mutations per trials in the trajectory progress file. See example in the production run example directory.
