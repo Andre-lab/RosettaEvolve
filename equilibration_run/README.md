@@ -11,5 +11,5 @@ The command to run one offset value is found in run_equilibrate.sh. The result o
 Comments on the xml script:
 
 - steepness is the factor that convert the Rosetta energy (for the beta_nov16_cart energy function) onto the approximate kcal/mol scale (beta * T) in the Boltzmann function).  
-- The NucleotideMutation move measures the ddG values at each position of the protein for all point mutations
+- The NucleotideMutation move measures the energy values at each position of the protein for all point mutations (from which the ddG can be calculated).
 - The EvolutionaryDynamics mover runs the evolutionary dynamics simulations and evolves the sequence
