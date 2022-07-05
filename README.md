@@ -2,7 +2,10 @@ This repository contains information about the computational procedures used to 
 
 "Atomistic simulation of protein evolution reveals sequence covariation and time-dependent fluctuations of site-specific substitution rates", Christoffer Norn and Ingemar André.
 
-The repo focuses on aspecte related to RosettaEvolve. RosettaEvolve is a set of methods used to simulated the evolution of proteins using an atomistic energy function and a stability-based fitness function. There are four types of Rosetta evolve simulations presented in the study:
+The repo focuses on aspecte related to RosettaEvolve. RosettaEvolve is a set of methods used to simulated the evolution of proteins using an atomistic energy function and a stability-based fitness function. The code for RosettaEvolve is distrubuted through Rosetta (https://www.rosettacommons.org/software) macromoecular modeling package, and the code found here. 
+
+
+There are four types of Rosetta evolve simulations presented in the study:
 
 1) Sequence equilibration simuations used to equilibrate the sequence for a given energy offset value. Example data and scripts in the directory equilibration_run. 
 2) Production runs simulating protein evolutionary along a single branch. The starting sequences and structures taken from the the end of the equilibration runs at given offsets. Example data and scripts in the directory production_run.
