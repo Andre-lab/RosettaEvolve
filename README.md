@@ -2,7 +2,7 @@
 
 This repository contains information about the computational procedures used to calculate the data for the manuscript
 
-[Atomistic simulation of protein evolution reveals sequence covariation and time-dependent fluctuations of site-specific substitution rates](https://www.biorxiv.org/content/10.1101/2022.06.01.494278v1)
+[Atomistic simulation of protein evolution reveals sequence covariation and time-dependent fluctuations of site-specific substitution rates](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010262)
 
 The repo focuses on aspects related to RosettaEvolve. RosettaEvolve is a set of methods used to simulated the evolution of proteins using an atomistic energy function and a stability-based fitness function. The code for RosettaEvolve is distributed through [Rosetta](https://www.rosettacommons.org/software) macromolecular modeling package, and together with the scripts found in this repo. 
 
